@@ -12,7 +12,17 @@ const { initCronJob } = require('./utils/cronJob');
 const app = express();
 
 // Middleware
-app.use(cors());
+const allowedOrigins = [
+  'https://track-app-frontend-three.vercel.app', // your frontend domain
+  'http://localhost:3000' // for local dev
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
