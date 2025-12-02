@@ -13,8 +13,8 @@ const app = express();
 
 // Middleware
 const allowedOrigins = [
-  'https://track-app-frontend-three.vercel.app', // your frontend domain
-  'http://localhost:3000' // for local dev
+  'https://track-app-frontend-three.vercel.app/', 
+  'http://localhost:3000' 
 ];
 
 app.use(cors({
